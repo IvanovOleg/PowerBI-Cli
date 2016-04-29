@@ -67,6 +67,8 @@ export default function CliCreateToken() {
 
             let jwt = token.generate(settings.accessKey);
             cli.success('%s: ', settings.tokenType, jwt);
+            cli.print('Token Payload');
+            cli.print(token.toJSON());
 
         } catch (err) {
             cli.error(err);
